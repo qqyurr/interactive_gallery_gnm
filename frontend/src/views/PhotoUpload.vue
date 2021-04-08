@@ -13,8 +13,7 @@
             <label for="imageUpload" @click='getSession'>
               <span id="here" class='uldbutton' style="font-size:30px">
                 <div class="label">
-                  <q-icon name="mdi-upload"></q-icon>
-                  <div style="font-size:13px;">Upload Picture</div>  
+                  <img src="../assets/camera.png" alt="" class="camera-icon">
                 </div>
               </span>
             </label>
@@ -50,7 +49,7 @@
             </div>
           </q-card-section>
 
-          <q-card-section class="q-ma-sm q-pt-none" style="font-family: 'Open Sans', sans-serif;">
+          <q-card-section class="q-ma-sm q-pt-none">
             특별전시 관람, 방명록 작성에 <strong style="color:#ff4045">제한</strong>이 있습니다.
           </q-card-section>
 
@@ -100,7 +99,7 @@ export default {
         let nextRoute
 
         if (this.nowRoute==='MonetPhoto'){
-          nextRoute = 'mone';
+          nextRoute = 'monet';
         }else if(this.nowRoute==='KlimtPhoto') {
           nextRoute = 'Klimt';
         }else {
@@ -142,10 +141,6 @@ export default {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
           reader.onload = function(e) {
-            // $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-            // $('#imagePreview').css('height', '500px');
-            // $('#imagePreview').hide();
-            // $('#imagePreview').fadeIn(650);
             $('#here').css('background-image', 'url('+e.target.result +')');
             $('#here').css('height', '500px');
             $('#here').css('min-width', '500px');
@@ -159,7 +154,6 @@ export default {
       $("#imageUpload").change(function() {
         readURL(this);
         temp.uploadFile = this.files[0];
-        // console.log(this.uploadFile)
       });
     }
 }
@@ -177,11 +171,9 @@ export default {
 
 
 
-
 .main {
   height: 100vh;
   background: #ECE5E1;
-  font-family: "Open Sans", sans-serif;
 }
 .container{
   display: flex;
@@ -210,7 +202,6 @@ h1 small {
   color: gray;
 }
 .avatar-upload {
-  /* position: relative; */
   display:flex;
   justify-content: center;
   margin: 60px auto;
@@ -218,8 +209,6 @@ h1 small {
 .avatar-upload .avatar-edit {
   position: absolute;
   display:block;
-  /* top: 30%;
-  right: 10%; */
   transform: translate(500%,200%);
 }
 .avatar-upload .avatar-edit input {
@@ -231,14 +220,22 @@ h1 small {
   justify-content: center;
   align-items: center;
 }
+
+
+.camera-icon {
+  width: 55%;
+  height: 55%;
+  object-fit:contain;
+  opacity: 0.3;
+}
+
 .uldbutton .label{
-  /* position:absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 100px;
-  padding-left:8px;
+  padding-left:0px;
   border-radius: 100%;
   background: #ffffff;
   border: 1px solid transparent;
@@ -261,35 +258,28 @@ h1 small {
   text-align: center;
   margin: auto;
 }
+
+
+
+.uldbutton .label:hover >.camera-icon {
+  transition: all 0.5s;
+  transform: scale(1.02);
+}
+
+
+
 /* 여기 위에 하는 중*/
 
 .avatar-upload .avatar-preview {
   min-width: 40%;
   min-height: 400px;
-  
-  /* position: relative;
-  left: 50%;
-  top: 50%; */
-  /* transform: translateX(-50%) translateY(20%); */
-  /* border-radius: 100%; */
   border: 13px solid #f8f8f8;
   box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.1);
 }
-/* .avatar-upload .avatar-preview:hover .avatar-edit input + label {
-  background: #f1f1f1;
-  border-color: #d6d6d6;
-} */
-/* .avatar-upload .avatar-preview > div {
-  width: 100%;
-  background-size:contain;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
+
 #here{
   width: 100%;
   min-width: 40%;
-  /* height: 100%; */
-  /* border-radius: 100%; */
   background-size:contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -304,6 +294,8 @@ footer>div:nth-child(1){
 footer .content {
   font-family: 'IBMPlexSansKR-Regular';
   font-size:1.1rem;
+  font-weight: 700;
+  color:rgba(0, 0, 0, 0.5)
 }
 footer .please-upload {
   font-family: 'Prata', serif;
@@ -314,8 +306,6 @@ footer .please-upload {
 #skipbtn {
     position: absolute;
     transform: translate(500%,0);
-    /* bottom: 20%;
-    right: 10%; */
 }
 
 </style>

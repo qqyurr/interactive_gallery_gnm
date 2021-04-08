@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="cover-5">
-      <div class="container" >
+      <router-link :to="'/tutorial'">
+        <GoToTutorial class="tutorial"/>
+      </router-link>
+      <div class="container">
         <div class="scrollicon">
           <div class="icon-scroll">
             <div class="scrolltext" style="color:white; font-family:'Cinzel">
@@ -9,66 +12,49 @@
             </div>
           </div>
         </div>
-        <section data-bgcolor="#bcb8ad" data-textcolor="#032f35" class="">
+       
+        <section data-bgcolor="#bcb8ad">
           <div>
-            <h1 id="maintext" data-scroll data-scroll-speed="1">
+            <div class='maintext' data-scroll data-scroll-speed="1" style="margin-top:0;">
               <span>On-line</span> <span>Interactive</span>
               <span>Exhibition</span>
-            </h1>
-            <router-link :to="'/tutorial'">
-              <div id="tutorialbtn" class="btn tutorial">go to tutorial</div>
-            </router-link>
+              <div class='myname'>그림이 널 만났을 때</div>
+              <img src="@/assets/GNM2.png" alt="" style="width:40vw;height:27vh;margin-top:60px;">
+            </div>
+            <div id="tutorialbtn" class="btn desc__gototutorial">전시 보러 가기</div>
+            
           </div>
         </section>
-        <!-- <section id="sectionPin" >
-          <div class="pin-wrap">
-            <h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </h2>
-            <img
-              src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
-              alt=""
-            />
-            <img
-              src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
-              alt=""
-            />
-            <img
-              src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
-              alt=""
-            />
-          </div>
-        </section> -->
+
         <section class="" style="" >
           <div class="row panel">
-            <div class="col-4 art wrapper">
-              <img src="../assets/main/art6.jpg" alt="art" class=" col-3 art" style="height: 100%; width: 100%; position:relative;">
+            <div class="col-4 wrapper">
+              <img src="../assets/main/art6.jpg" alt="art" class=" col-3 " style="height: 100%; width: 100%; position:relative;">
               <p class="description q-pt-xl"> 코시국으로<br> 외출한 지가 오래라 <br>마지막으로<br> 미술관 간지가 <br>언젠지도 몰라</p>
             </div>
             <div class="col-8 row" style="position:relative;">
               <div class="col-6 wrapper">
-                <img src="../assets/main/ma2.jpg" alt="art" class="art" >
+                <img src="../assets/main/ma2.jpg" alt="art" class="" >
                 <p class="description q-pt-lg"> <br>그림?<br>전 그림이 너무 <br>어려워요.</p>
               </div>
               <div class="col-6 wrapper ">
-                <img src="../assets/main/art5.png" alt="art" class="art" >
-                <p class="description q-pt-md"> 언제까지 <br>멀리서 <br>구경만 할 거에요?</p>
+                <img src="../assets/main/art5.png" alt="art" class="" >
+                <p class="description q-pt-md"> 언제까지 <br>멀리서 <br>구경만 할 거예요?</p>
               </div>
               <div class="col-6 wrapper">
-                <img src="../assets/main/kids7.jpg" alt="art" class="art" >
-                <p class="description q-pt-sm"> 미술관은 지루해.<br>집에 가서 게임하면<br> 안 돼요?</p>
+                <img src="../assets/main/kids7.jpg" alt="art" class="" >
+                <p class="description q-pt-sm" style='margin-top:20px;'> 미술관은 지루해.<br>집에 가서 게임하면<br> 안 돼요?</p>
               </div>
               <div class="col-6 wrapper row justify-center items-center">
-                <img src="../assets/main/clo.jpg" alt="art" class="art">
-                <p class="description q-pt-xl">미술관에 가려면.. <br>뭘 입어야 하지?</p>
+                <img src="../assets/main/clo.jpg" alt="art" class="">
+                <p class="description q-pt-xl">미술관에 가려면... <br>뭘 입어야 하지?</p>
               </div>
             </div>
           </div>
         </section>
 
 
-        <section class="c-section " style="height:300vh;">
+        <section class="c-section" style="height:300vh;">
             <div class="o-container" id="scroll-direction">
                 <div class="c-direction-block_wrapper">
                     <div class="c-section_infos -padding" data-scroll data-scroll-sticky data-scroll-target="#scroll-direction">
@@ -76,6 +62,7 @@
                           <div>
                             <img src="../assets/main/arrow.png" alt="">
                           </div>
+
                         </div>
                     </div>
                     <div class="c-direction-block" id="direction">
@@ -91,7 +78,7 @@
                         </div>
                         <div class="c-direction-block_item -three">
                             <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="9" data-scroll-target="#direction" data-scroll-delay="0.05">
-                                Have fun with art. It's not difficult. Right?
+                                Hav fun with art. It's not difficult. Right?
                             </span>
                         </div>
                         <div class="c-direction-block_item -four">
@@ -111,8 +98,7 @@
 
 
 
-        <section class="section cheon" >
-          
+        <section class="section cheon">
           <img src="../assets/main/cheon.png" alt="art" class="" >
           <div class="section-0" data-scroll data-scroll-speed="3">
             <p style="color:black;position:relative;"
@@ -136,7 +122,6 @@
             >
                 자
             </p>
-            <q-btn :to='"/startcheon"' size="22px" class="movebtn">천경자 전시관 가기</q-btn>
           </div>    
  
         </section>
@@ -158,8 +143,6 @@
             >
                 Klimt 
             </p>
-
-            <q-btn :to='"/startklimt"' size="22px" class="movebtn" >클림트 전시관 가기</q-btn>
           </div>    
           
 
@@ -183,23 +166,22 @@
             >
                 Monet
             </p>            
-           <q-btn :to='"/startmonet"' size="22px" class="movebtn">모네 전시관 가기</q-btn>
           </div>
           <img src="../assets/main/monetcut.png" alt="art" class="" >
         </section>
 
-        <section style="background: linear-gradient(white, #111); height: 120vh;" class="outsection">
+        <section style="background: linear-gradient(white, #111); height: 120vh;">
 
 
         </section>
 
-        <section style="height:180vh;" class="">
+        <section style="height:180vh;">
           <div class="row panel">
   
             <div class="col-8 row" style="position:relative;">
               <div class="col-6 wrapper">
                 <img src="../assets/main/vb1.jpg" alt="art" class="art" >
-                <p class="description q-pt-lg"> <br>그림?<br>너무<br>재밌잖아..?</p>
+                <p class="description q-pt-lg"> <br>그림?<br>너무<br>재밌잖아?</p>
               </div>
               <div class="col-6 wrapper ">
                 <img src="../assets/main/bed.jpg" alt="art" class="art" >
@@ -207,11 +189,11 @@
               </div>
               <div class="col-6 wrapper row justify-center items-center">
                 <img src="../assets/main/kids5.jpg" alt="art" class="art">
-                <p class="description q-pt-sm" > 저.. 오늘부터<br>그림 그릴거에요 </p>
+                <p class="description q-pt-sm" style="margin-top:20px;" > 저... 오늘부터<br>그림 그릴거예요 </p>
               </div>
               <div class="col-6 wrapper">
                 <img src="../assets/main/kids.jpg" alt="art" class="art" >
-                <p class="description q-pt-xl" style="padding-top:200px;"> 게임보다<br>재밌어!!</p>
+                <p class="description q-pt-xl" style="margin-bottom:100px;"> 게임보다<br>재밌어!</p>
               </div>
             </div>
             <div class="col-4 art wrapper">
@@ -232,10 +214,12 @@
   </div>
 </template>
 
+
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
+import GoToTutorial from '@/components/IconMap/GoToTutorial';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -251,6 +235,9 @@ export default {
       },
     };
   },
+  components:{
+    GoToTutorial
+  },
   mounted: function() {
     const pageContainer = document.querySelector(".container");
     /* SMOOTH SCROLL */
@@ -259,22 +246,6 @@ export default {
       smooth: true,
     });
     scroller.on("scroll", ScrollTrigger.update);
-    ScrollTrigger.scrollerProxy(pageContainer, {
-      scrollTop(value) {
-        return arguments.length
-          ? scroller.scrollTo(value, 0, 0)
-          : scroller.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          left: 0,
-          top: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: pageContainer.style.transform ? "transform" : "fixed",
-    });
     let t1 = gsap.timeline();
     t1.from(".imsrk", {
       opacity: 0,
@@ -386,14 +357,6 @@ export default {
 }
 
 
-.movebtn {
-  font-family: 'Noto Sans KR', sans-serif;
-  background: rgb(228, 227, 227);
-  color:#2a2b2e;
-}
-
-
-
 .description {
   position:absolute;
   z-index: 100;
@@ -437,7 +400,7 @@ export default {
 .scrollicon{
   position:fixed;
   left: 13%;
-  top: 27%;
+  top: 7%;
 }
 .scrolltext {
   position: absolute;
@@ -514,6 +477,20 @@ export default {
 #tutorialbtn {
   color: white;
 }
+.desc__gototutorial{
+  position: absolute !important;
+  font-size:50px;
+  bottom: 9%;
+  right: 17%;
+}
+.img__gototutorial{
+  position: absolute !important;
+  bottom: 12%;
+  right: 13%;
+  width:100px !important;
+  height:100px !important;
+  transform:rotate(-30deg);
+}
 .cover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -540,12 +517,10 @@ export default {
   position: sticky;
   display: flex;
   margin-top: 40px;
-  opacity: 0.5;
-  border: 1px solid gray;
-  padding: 5px 12px 6px 12px;
+  opacity: 0.8;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 50px;
 }
 header {
   display: -webkit-box;
@@ -665,10 +640,10 @@ img {
   object-fit: cover;
 }
 
-h1 {
-  font-size: 5rem;
+.maintext {
+  font-size: 1.2rem;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 1rem;
   position: absolute;
   top: 10vw;
@@ -676,18 +651,23 @@ h1 {
   z-index: 4;
   overflow-wrap: break-word;
   hyphens: auto;
-  color: white;
-  font-family: "Cinzel";
 
   @media (max-width: 768px) {
     font-size: 16vw;
   }
   span {
     display: block;
-    color: white;
+    font-family: 'Montserrat','Noto Sans KR';
+    color:rgba(221, 221, 221, 0.568);
+    
   }
 }
-
+.myname {
+  margin-top: 10px;
+  color: rgb(248, 247, 237);
+  font-size: 2rem;
+  font-weight: 700;
+}
 h2 {
   font-size: 2rem;
   max-width: 400px;
@@ -705,28 +685,6 @@ h2 {
   box-sizing: border-box;
 }
 
-#sectionPin {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  left: 0;
-  background: var(--text-color);
-  color: var(--bg-color);
-}
-
-.pin-wrap {
-  height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 50px 10vw;
-
-  & > * {
-    min-width: 60vw;
-    padding: 0 5vw;
-  }
-}
-
 p {
   position: absolute;
   bottom: 10vw;
@@ -739,87 +697,9 @@ p {
 
 .tutorial {
   position: absolute;
-  bottom: 10%;
-  right: 10%;
+  bottom: 8%;
+  right: 7%;
 }
-
-
-///////////////////////////////////////////////////////////////////////////`
-// @media (min-width: 1024px) {
-//   .cover-heading h1 {
-//     font-size: 60px;
-//   }
-//   .cover-heading span {
-//     font-size: 60px;
-//   }
-//   .imsrk2 {
-//     font-size: 124px;
-//   }
-//   header {
-//     padding: 50px 80px;
-//   }
-//   header ul {
-//     margin-left: auto;
-//   }
-//   header ul li {
-//     font-size: 20px;
-//   }
-//   .container {
-//     margin-top: 100px;
-//     display: -ms-grid;
-//     display: grid;
-//     -ms-grid-columns: 1fr 1fr;
-//         grid-template-columns: 1fr 1fr;
-//     -webkit-box-align: center;
-//         -ms-flex-align: center;
-//             align-items: center;
-//   }
-//   .container .left{
-//     margin-left:20%;
-//   }
-//   .container .right {
-//     padding: 0;
-//     margin-top: -80px;
-//   }
-//   .container .right h1 {
-//     color: white;
-//     font-size: 140px;
-//     font-weight: 400;
-//     display: inline-block;
-//     font-family: 'Cinzel';
-//     line-height: 1;
-//   }
-//   .container .right span {
-//     font-size: 50px;
-//     letter-spacing: -4px;
-//     color: #6b6b6b;
-//   }
-//   .container .right p {
-//     margin-top: 40px;
-//     max-width: 600px;
-//     color: white;
-//     opacity: 0.5;
-//     font-size: 18px;
-//     line-height: 1.7;
-//   }
-//   .container .right a {
-//     text-decoration: none;
-//     color: white;
-//     display: inline-block;
-//     margin-top: 40px;
-//     opacity: 0.5;
-//     border: 1px solid gray;
-//     padding: 5px 12px 6px 12px;
-//     border-radius: 5px;
-//   }
-// }
-// /*# sourceMappingURL=style.css.map */
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-
-
 
 
 .o-container {

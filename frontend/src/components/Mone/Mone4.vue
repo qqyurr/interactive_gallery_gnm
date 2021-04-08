@@ -19,7 +19,7 @@
 </template>
 
 <script>
-// import { gsap } from 'gsap';
+
 export default {
     name:"Mone4",
     computed: {
@@ -29,11 +29,10 @@ export default {
     },
     watch:{
       'page':function(){
-        // const insang = document.querySelector('#insang')
+
         const info = document.querySelector('#info')
 
         if(this.page===4){
-          console.log(this.page)
           setTimeout(function(){
             info.classList.add('active');
           },500)
@@ -69,7 +68,6 @@ export default {
   width: 0%;
   display: flex;
   flex-direction: column;  
-  /* justify-content: flex-end; */
   right:0;
   margin-top:10%;
   margin-left:50%;
@@ -87,7 +85,6 @@ transform: translateX(-10%);
 }
 
 .carousel-item__subtitle {
-    font-family: 'Open Sans', sans-serif;
     letter-spacing: 3px;
     font-size: 15px;
     text-transform: uppercase;
@@ -108,9 +105,8 @@ transform: translateX(-10%);
 
 .carousel-item__description {
     margin-top: 35px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
+    font-size: 14px;
+    font-weight: 300;
     color: #2C2C2C;
     line-height: 22px;
     margin-bottom: 35px;

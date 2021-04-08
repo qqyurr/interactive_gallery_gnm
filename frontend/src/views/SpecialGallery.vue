@@ -3,23 +3,15 @@
     <!-- 평면도 -->
     <IconMap />
     <!-- 각각의 결과물 -->
-    <OutputList />
+    <div class="list">
+      <Output v-for="(image,idx) in selectableImages" :key="idx" :changedImage="image" :artist="artistName[idx]"/>
+      <!-- <Output />
+      <Output /> -->
+    </div>
     <!-- 방명록 작성 이동 -->
-    <q-btn
-      padding="lg"
-      color="primary"
-      icon="auto_stories"
-      id="guest-book-btn"
-      :to='"/guestbook"'
-    >
-      <q-tooltip 
-        content-style="font-size: 16px"
-        anchor="top middle" 
-        self="bottom middle" 
-        :offset="[10, 10]">
-          <strong>방명록 작성</strong>
-      </q-tooltip>
-    </q-btn>
+    <div>
+      <GoToGB style="position:absolute; bottom: 0px; right: 80px;"/>
+    </div>
     <!-- 메인 벽지 -->
     <div class="wall"></div>
   </div>
@@ -27,47 +19,34 @@
 
 <script>
 import IconMap from "@/components/IconMap/IconMap.vue";
-import OutputList from "@/components/SpecialGallery/OutputList.vue";
-import $ from 'jquery'
+import GoToGB from "@/components/IconMap/GoToGB.vue";
+import Output from "@/components/SpecialGallery/Output.vue";
 
 export default {
   name: 'SpecialGallery',
   components: {
     IconMap,
-    OutputList,
+    Output,
+    GoToGB,
   },
   data() {
     return {
       test: false,
+      artistName:['Monet','Klimt','천경자']
     }
   },
-  mounted() {
-    const $main = $('#main')
-    // add caption container
-    this.$caption = $( '<div class="gr-caption"><span class="gr-caption-close">x</span></div>' ).appendTo( $main );
-    this.$caption.find( 'span.gr-caption-close' ).on( 'click', $.proxy( this.hideDescription, this ) );
-
-    // click on item's caption
-    var self = this;
-    this.$el.on( 'click', 'figure > figcaption', function() {
-      var $caption = $( this ),
-        $item = $caption.parent(), 
-        idx = $item.index() - 1;
-      
-      if( self.caption === self.currentItem && idx === self.currentItem ) {
-        return false;
-      }
-      else if( idx !== self.currentItem ) {
-        self.jump( idx, function() {
-          self.showDescription( $caption, idx );
-        } );
-      }
-      else {
-        self.showDescription( $caption, idx );
-      }
-      
-    } );
+  computed:{
+    selectableImages(){
+      return this.$store.state.guestbook.selectable_images
+    }
+  }, 
+  created(){
+    this.$store.dispatch('guestbook/getImages',this.$route.name)
   },
+  mounted() {
+  },
+  methods: {
+  }
 }
 </script>
 
@@ -78,6 +57,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position:relative;
 }
 .column {
   align-self: center;
@@ -103,4 +83,13 @@ export default {
   background-size: cover;
   
 }
+/* 결과물 리스트 */
+.list {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
 </style>

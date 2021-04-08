@@ -73,18 +73,17 @@ body, html {
 #sentence{
   position: absolute;
   top: 70%;
-  left: 4%;
+  left: 5%;
   font-size: 18px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.7);
 }
 #bg {
   background-image: url('../../assets/mone.jpg');
-  /* width: 60%; */
   height: 70vh;
   width: 60vw;
   order: 2;
   align-self: flex-end;
-  /* flex-basis: 60%; */
-  /* background-position: left; */
   background-repeat: no-repeat;
   background-size: cover;
   position:relative;

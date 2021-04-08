@@ -25,7 +25,6 @@ export default {
         const info = document.querySelector('#carousel-item__info')
 
         if(this.page===3){
-          console.log(this.page)
           setTimeout(function(){
             insang.classList.add('active');
           },500)
@@ -72,7 +71,6 @@ export default {
 .carousel-item__info {
   height: 100%;
   margin-right:68%;
-  /* padding: 0 40px; */
   top:60%;
   left: 4%;
   width: 30vw;
@@ -80,7 +78,6 @@ export default {
 }
 
 .carousel-item__subtitle {
-    font-family: 'Open Sans', sans-serif;
     letter-spacing: 3px;
     font-size: 15px;
     text-transform: uppercase;
@@ -101,8 +98,7 @@ export default {
 
 .carousel-item__description {
     margin-top: 35px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 100;
     color: #2C2C2C;
     line-height: 22px;

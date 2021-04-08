@@ -25,7 +25,6 @@ export default {
         const info = document.querySelector('#carousel-item__info')
 
         if(this.page===2){
-          console.log(this.page)
           setTimeout(function(){
             insang.classList.add('active');
             },500)
@@ -70,11 +69,6 @@ export default {
   height: 60vh;
   width: 50vw;
 }
-/* .carousel-item_info{
-  z-index:902;
-  position: absolute;
-  left:10%;
-} */
 
 .carousel-item__info {
   height: 100%;
@@ -88,32 +82,30 @@ export default {
 }
 
 .carousel-item__subtitle {
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 3px;
-    font-size: 15px;
-    text-transform: uppercase;
-    margin-left: 6px;
-    color: #2C2C2C;    
-    font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-left: 6px;
+  color: #2C2C2C;    
+  font-weight: 700;
 }
 
 .carousel-item__title {
-    margin: 15px 0 0 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 44px;
-    line-height: 45px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    color: #2C2C2C;
+  margin: 15px 0 0 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  line-height: 45px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #2C2C2C;
 }
 
 .carousel-item__description {
-    margin-top: 35px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    color: #2C2C2C;
-    line-height: 22px;
-    margin-bottom: 35px;
+  margin-top: 35px;
+  font-size: 14px;
+  font-weight: 200;
+  color: #2C2C2C;
+  line-height: 22px;
+  margin-bottom: 35px;
 }
 </style>

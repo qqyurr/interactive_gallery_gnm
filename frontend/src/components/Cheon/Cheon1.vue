@@ -31,12 +31,12 @@ export default {
 .cheon1_pic{
   height: 100vh;
   animation: fadein 3s;
-  /* -webkit-animation: fadein 3s; */
 }
 
 .title{
   position: absolute;
   top: 20% ;
+  left: 14%;
   margin: 3% ;
   text-shadow: 0 0 15px rgba(143, 143, 143, 0.658);
 }
@@ -46,7 +46,7 @@ export default {
 }
 
 
-@-webkit-keyframes fadein { /*Safari and Chrome */
+@-webkit-keyframes fadein { 
     from {
         opacity: 0;
     }
@@ -59,10 +59,9 @@ export default {
   top: 60%;
   right: 2%;
   width: 25%;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   text-align: left;
-  font-size: 1rem;
+  font-weight: 200;
 }
 
 </style>

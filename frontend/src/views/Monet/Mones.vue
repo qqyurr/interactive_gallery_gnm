@@ -40,19 +40,17 @@ export default {
 
      window.addEventListener('wheel', function(e)
     {
-      if(this.$route.name==='Mones'){
+      if(this.$route.name==='Monets'){
 
         e.preventDefault();
   
         let scrollBottom = 4;
         let scrollLeft = 1;
-        // console.log(scrollLeft)
-        
   
   
         let delta = e.deltaY
         if(delta>0){
-          if(container.scrollLeft>sectionPageWidth*2){
+          if(container.scrollLeft>sectionPageWidth*3){
             this.page=4
             scrollLeft = 4
             return;
